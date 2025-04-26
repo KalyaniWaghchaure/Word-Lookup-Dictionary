@@ -1,0 +1,45 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Lookup Dictionary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Word Lookup Dictionary</h1>
+            <p>Search for word definitions, get spelling suggestions, and more!</p>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="word-input" placeholder="Enter a word..." autocomplete="off">
+            <button id="search-btn">Search</button>
+        </div>
+
+        <div id="result-container" class="hidden">
+            <div id="word-info">
+                <h2 id="result-word"></h2>
+                <p id="result-definition"></p>
+            </div>
+
+            <div id="suggestions-container" class="hidden">
+                <h3>Did you mean:</h3>
+                <ul id="suggestions-list"></ul>
+            </div>
+        </div>
+
+        <div id="add-word-container">
+            <h3>Add a New Word</h3>
+            <input type="text" id="new-word" placeholder="Word">
+            <textarea id="new-definition" placeholder="Definition"></textarea>
+            <button id="add-word-btn">Add Word</button>
+            <p id="add-word-message"></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
